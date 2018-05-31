@@ -9,10 +9,11 @@ makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
     x <<- y
+    ## Makes sure if the matrix change the invert matrix will be calculated again.
     m <<- NULL
   }
   get <- function() x
-  setinvmatrix <- function(mean) m <<- mean
+  setinvmatrix <- function(inv) m <<- inv
   getinvmatrix <- function() m
   list(set = set, get = get,
        setinvmatrix = setinvmatrix,
